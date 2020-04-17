@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //get the "cache" aka sharedpreferences
+        //https://medium.com/@appmattus/caching-made-simple-on-android-d6e024e3726b
         var cache = applicationContext.getSharedPreferences("logins", Context.MODE_PRIVATE);
 
         //if the cache already contain an email and pswd, navigate to next page
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, SecondActivity::class.java);
             startActivity(intent);
         }
+
+
     }
 
     //login with another identity
@@ -30,6 +33,9 @@ class MainActivity : AppCompatActivity() {
         //get the "cache"
         var logins = applicationContext.getSharedPreferences("logins", Context.MODE_PRIVATE)
 
+        /*
+        TODO : check if its a valid email
+        */
         //collect the inputs and put them in the cache
         logins.edit().putString("email", email.text.toString()).apply()
         logins.edit().putString("password", password.text.toString()).apply()
