@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TP-TextEdit</string>
+    <string name="editText_hint">Saissisez votre texte</string>
+    <string name="editText_default">Aucun texte saisi</string>
+
+    <string name="navigationButton_label">Navigate</string>
+</resources>
